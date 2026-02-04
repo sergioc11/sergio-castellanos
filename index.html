@@ -65,12 +65,15 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Ingeniería de Software & Estrategia de Datos</h1>
-            <p>Transformando procesos complejos en soluciones eficientes mediante .NET, Integraciones SAP e Inteligencia
-                Artificial.</p>
+            <h1>
+                Ingeniero en Sistemas<br>
+                Especialista de Datos<br>
+                MBA
+            </h1>
+            <p>Enfoque en infraestructuras escalables, automatización con IA y soluciones de alta disponibilidad.</p>
             <div class="btn-group">
-                <a href="#projects" class="btn btn-primary">Ver Soluciones Dev</a>
-                <a href="#projects" class="btn btn-secondary">Ver Soluciones Data</a>
+                <a href="#projects" class="btn btn-primary" id="hero-btn-dev">Ver Soluciones Dev</a>
+                <a href="#projects" class="btn btn-secondary" id="hero-btn-data">Ver Soluciones Data</a>
             </div>
         </div>
     </section>
@@ -82,13 +85,14 @@
             <div class="about-grid">
                 <div class="about-text-content">
                     <p class="about-text">
-                        Con más de 7 años optimizando operaciones en consumo masivo (Cervecería Centroamericana),
-                        combino la robustez de la ingeniería de sistemas con la visión estratégica de un MBA. Mi enfoque
-                        no es solo escribir código, sino diseñar arquitecturas escalables que resuelvan problemas de
-                        negocio reales.
+                        Ingeniero en Sistemas con MBA y más de 7 años de experiencia en el sector de consumo masivo. Me
+                        especializo en Ingeniería de Datos, diseñando integraciones críticas (SAP) y optimizando la
+                        inteligencia de negocios. Recientemente, he ampliado mis competencias hacia la Inteligencia
+                        Artificial Generativa y la Automatización, combinando habilidades técnicas sólidas con liderazgo
+                        estratégico orientado a resultados.
                     </p>
                     <div class="about-highlight">
-                        "Arquitectura limpia, datos precisos y estrategia de negocio alineada."
+                        "Liderazgo estratégico, automatización inteligente y arquitectura de datos robusta."
                     </div>
                 </div>
                 <!-- Profile Image -->
@@ -104,31 +108,59 @@
         <div class="container">
             <h2 class="section-title">Expertise Técnico</h2>
             <div class="skills-grid">
-                <!-- Columna 1: Desarrollo -->
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <i class="fas fa-code"></i>
-                        <h3>Desarrollo & Arquitectura</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li>.NET, C#, ASP.NET MVC</li>
-                        <li>Integraciones SAP ERP</li>
-                        <li>Desarrollo y Consumo de APIs / Web Services (REST/SOAP)</li>
-                        <li>SQL Server (Alta Disponibilidad)</li>
-                    </ul>
-                </div>
-
-                <!-- Columna 2: Datos & IA -->
+                <!-- Columna 1: IA & Datos -->
                 <div class="skill-card">
                     <div class="skill-header">
                         <i class="fas fa-brain"></i>
-                        <h3>Datos & Inteligencia Artificial</h3>
+                        <h3>IA & Datos</h3>
                     </div>
                     <ul class="skill-list">
-                        <li>Python, ETL/Data Pipelines</li>
-                        <li>Power BI & DAX</li>
+                        <li>Python, Vibe Coding</li>
                         <li>Prompt Engineering</li>
-                        <li>Automatización de Procesos</li>
+                        <li>Power BI (DAX, Power Query)</li>
+                        <li>Procesos ETL/ELT</li>
+                    </ul>
+                </div>
+
+                <!-- Columna 2: Desarrollo -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Desarrollo</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>ASP.NET MVC, C#</li>
+                        <li>JavaScript, Angular</li>
+                        <li>HTML5/CSS3</li>
+                        <li>Arquitectura de Software</li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Bases de Datos -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Bases de Datos</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>SQL Server (T-SQL)</li>
+                        <li>Modelado de Datos</li>
+                        <li>Alta Disponibilidad</li>
+                        <li>Optimización de Consultas</li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Integraciones -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Integraciones</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Integraciones SAP ERP</li>
+                        <li>Web Services (REST/SOAP)</li>
+                        <li>JSON/XML</li>
+                        <li>Middleware</li>
                     </ul>
                 </div>
             </div>
@@ -138,76 +170,110 @@
     <!-- Proyectos -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Casos de Éxito</h2>
+            <h2 class="section-title">Portafolio de Proyectos Destacados</h2>
+
+            <!-- Controls for filtering visualization (Optional UX enhancement) -->
+            <div id="project-controls" style="margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button onclick="filterProjects('all')" class="btn-filter active">Ver Todos</button>
+                <button onclick="filterProjects('dev')" class="btn-filter">Desarrollo</button>
+                <button onclick="filterProjects('data')" class="btn-filter">Datos & Infra</button>
+            </div>
+
             <div class="projects-grid">
 
-                <!-- Proyecto A -->
-                <div class="project-card">
+                <!-- Proyecto 1: eSFA (Data/Infra) -->
+                <div class="project-card" data-category="data">
                     <div class="project-top">
                         <div class="folder-icon">
-                            <i class="far fa-folder"></i>
+                            <i class="fas fa-database"></i>
                         </div>
                         <div class="project-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            <span class="category-tag">Datos & Infra</span>
                         </div>
                     </div>
-                    <h3>Sistema de Movilidad Logística (eSFA)</h3>
+                    <h3>Sistemas de Movilidad (eSFA)</h3>
                     <div class="project-description">
-                        <span class="project-detail-label">Reto:</span> Sincronizar despachos en tiempo real.
+                        <span class="project-detail-label">Rol:</span> Responsable de alta disponibilidad.
                         <br>
-                        <span class="project-detail-label">Solución:</span> API RESTful integrada con SAP y móviles.
+                        <span class="project-detail-label">Impacto:</span> Migración de servidores SQL y soporte crítico
+                        para preventa/autoventa.
+                    </div>
+                    <ul class="project-tech-list">
+                        <li>SQL Server</li>
+                        <li>Alta Disponibilidad</li>
+                        <li>Migración</li>
+                    </ul>
+                </div>
+
+                <!-- Proyecto 2: Integraciones SAP (Dev/Integration) -->
+                <div class="project-card" data-category="dev">
+                    <div class="project-top">
+                        <div class="folder-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="project-links">
+                            <span class="category-tag">Integración</span>
+                        </div>
+                    </div>
+                    <h3>Integraciones SAP</h3>
+                    <div class="project-description">
+                        <span class="project-detail-label">Rol:</span> Desarrollador Backend.
+                        <br>
+                        <span class="project-detail-label">Impacto:</span> Interfaces para sincronización de despachos
+                        en tiempo real entre ERP y legados.
                     </div>
                     <ul class="project-tech-list">
                         <li>.NET</li>
-                        <li>SQL</li>
-                        <li>API REST</li>
+                        <li>SAP ERP</li>
+                        <li>Real-time</li>
                     </ul>
                 </div>
 
-                <!-- Proyecto B -->
-                <div class="project-card">
+                <!-- Proyecto 3: Sistema ADA (Dev) -->
+                <div class="project-card" data-category="dev">
                     <div class="project-top">
                         <div class="folder-icon">
-                            <i class="fas fa-chart-pie"></i>
+                            <i class="fas fa-snowflake"></i>
                         </div>
                         <div class="project-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            <span class="category-tag">Desarrollo</span>
                         </div>
                     </div>
-                    <h3>Optimización de Inteligencia Comercial</h3>
+                    <h3>Sistema ADA (Equipo Frío)</h3>
                     <div class="project-description">
-                        <span class="project-detail-label">Reto:</span> Centralizar datos dispersos.
+                        <span class="project-detail-label">Rol:</span> Full Stack Dev.
                         <br>
-                        <span class="project-detail-label">Solución:</span> Arquitectura ETL y Dashboards ejecutivos.
+                        <span class="project-detail-label">Impacto:</span> Control nacional de equipo frío, gestión y
+                        soporte de nuevas funcionalidades.
                     </div>
                     <ul class="project-tech-list">
-                        <li>Power BI</li>
+                        <li>ASP.NET MVC</li>
+                        <li>C#</li>
                         <li>SQL</li>
-                        <li>ETL</li>
                     </ul>
                 </div>
 
-                <!-- Proyecto C -->
-                <div class="project-card">
+                <!-- Proyecto 4: Clientes ABC (Dev) -->
+                <div class="project-card" data-category="dev">
                     <div class="project-top">
                         <div class="folder-icon">
-                            <i class="fas fa-server"></i>
+                            <i class="fas fa-users"></i>
                         </div>
                         <div class="project-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            <span class="category-tag">Desarrollo</span>
                         </div>
                     </div>
-                    <h3>Middleware SAP - Legados</h3>
+                    <h3>Clientes ABC</h3>
                     <div class="project-description">
-                        <span class="project-detail-label">Reto:</span> Integridad de datos críticos.
+                        <span class="project-detail-label">Rol:</span> Mantenimiento y Desarrollo.
                         <br>
-                        <span class="project-detail-label">Solución:</span> Interfaces robustas para flujo de clientes y
-                        logística.
+                        <span class="project-detail-label">Impacto:</span> Sistema de solicitudes de clientes integrado
+                        con el ecosistema SAP.
                     </div>
                     <ul class="project-tech-list">
                         <li>SAP Integration</li>
-                        <li>Middleware</li>
-                        <li>Backend</li>
+                        <li>Web Forms/MVC</li>
+                        <li>SQL</li>
                     </ul>
                 </div>
 
@@ -218,41 +284,62 @@
     <!-- Formación -->
     <section id="formation">
         <div class="container">
-            <h2 class="section-title">Formación Reciente</h2>
+            <h2 class="section-title">Formación & Certificaciones</h2>
             <div class="timeline-grid">
                 <div class="edu-item">
                     <div class="edu-year">2026</div>
                     <div class="edu-details">
-                        <h4>Vibe Coding y Automatizaciones</h4>
-                        <span>BIG School</span>
+                        <h4>IA y Automatización (Vibe Coding)</h4>
+                        <span>BIG School | Enero 2026</span>
+                    </div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-year">2025</div>
+                    <div class="edu-details">
+                        <h4>Coloquio "La IA en los Negocios"</h4>
+                        <span>Universidad Mariano Gálvez | Octubre 2025</span>
+                    </div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-year">2025</div>
+                    <div class="edu-details">
+                        <h4>Curso de Iniciación al Desarrollo con IA</h4>
+                        <span>BIG School | Octubre 2025</span>
+                    </div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-year">2025</div>
+                    <div class="edu-details">
+                        <h4>Diseñador de Peticiones IA (Prompt Engineering)</h4>
+                        <span>Fundación Carlos Slim | Septiembre 2025</span>
                     </div>
                 </div>
                 <div class="edu-item">
                     <div class="edu-year">2025</div>
                     <div class="edu-details">
                         <h4>Masterclass 4.0: Python, IA y Ciberseguridad</h4>
-                        <span>IngeLearn</span>
+                        <span>Ingelearn | Marzo 2025</span>
                     </div>
                 </div>
                 <div class="edu-item">
                     <div class="edu-year">2025</div>
                     <div class="edu-details">
-                        <h4>Diseñador de Peticiones IA</h4>
-                        <span>Fundación Carlos Slim</span>
-                    </div>
-                </div>
-                <div class="edu-item">
-                    <div class="edu-year">2025</div>
-                    <div class="edu-details">
-                        <h4>Introducción al Desarrollo con IA</h4>
-                        <span>Platzi</span>
+                        <h4>Fundamentos: Introducción a IA & Python</h4>
+                        <span>Platzi | Marzo 2025</span>
                     </div>
                 </div>
                 <div class="edu-item">
                     <div class="edu-year">2024</div>
                     <div class="edu-details">
                         <h4>MBA - Máster en Administración de Negocios</h4>
-                        <span>Honor al Mérito</span>
+                        <span>Universidad Mariano Gálvez | Honor al Mérito (Promedio 91)</span>
+                    </div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-year">2016</div>
+                    <div class="edu-details">
+                        <h4>Ingeniería en Sistemas de Información</h4>
+                        <span>Primer lugar en competencia de robots</span>
                     </div>
                 </div>
             </div>
